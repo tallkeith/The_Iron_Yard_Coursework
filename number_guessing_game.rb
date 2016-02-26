@@ -23,19 +23,19 @@ end
 guess
 
 
-# hard mode DESTUTTER!!!
+# # hard mode DESTUTTER!!!
 
-def destutter(numbers)
-	a = []
-	previous = nil
-	numbers.each do |i|
-		if i != previous
-			a.push(i)
-		end
-		previous = i
-	end
+# def destutter(numbers)
+# 	a = []
+# 	previous = nil
+# 	numbers.each do |i|
+# 		if i != previous
+# 			a.push(i)
+# 		end
+# 		previous = i
+# 	end
 
-	puts a
-end
+# 	puts a
+# end
 
-destutter([1, 2, 3, 3, 4, 4, 3, 2, 1, 1])
+# destutter([1, 2, 3, 3, 4, 4, 3, 2, 1, 1])

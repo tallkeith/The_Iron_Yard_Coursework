@@ -7,6 +7,10 @@ require "pry"
 # * current_player
 
 
+# * start game
+
+
+
 board = [8,1,6,3,5,7,4,9,2]
 
 def show_board(board)
