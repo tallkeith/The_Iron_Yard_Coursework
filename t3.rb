@@ -1,18 +1,6 @@
 require "pry"
 
-# DATA IN THE SYSTEM
-# * board
-# * player1 (name/piece), player2
-# * win conditions
-# * current_player
-# * player score
-
-# * selection
-# * start game
-
-MAX_TURNS = 9
 board = [8,1,6,3,5,7,4,9,2]
-
 
 def show_board(board)
 	3.times do |row|
@@ -43,7 +31,6 @@ def score(player_score)
 		end
 		puts "Selection must be a number 1-9"
 	end
-	
 	player_score.push(choice)
 	choice
 end
