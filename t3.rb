@@ -26,10 +26,8 @@ def win?(player_score, comp_score)
 		puts "Congratulations, you win!"
 	elsif comp_score.reduce(:+) == 15
 		puts "Sorry, you lost"
-	elsif turn_count == MAX_TURNS
+	else turn_count == MAX_TURNS
 		puts "You tied!"
-	else
-		next_turn
 	end
 end
 
@@ -51,7 +49,6 @@ end
 def icons(board, input)
 	player_piece = "X"
 	comp_piece = "O"
-	# score(player_score) = spot
 	spot = board.index(input)
 	board[spot] = player_piece
 
