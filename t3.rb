@@ -48,14 +48,14 @@ def score(player_score)
 	choice
 end
 
-def icons
+def icons(board, input)
 	player_piece = "X"
 	comp_piece = "O"
 	# score(player_score) = spot
 	spot = board.index(input)
 	board[spot] = player_piece
 
-	show_board
+	show_board(board)
 
 end
 
@@ -65,7 +65,7 @@ def play_game(board)
 	comp_score = []
 	show_board(board)
 	move = score(player_score)
-	icons
+	icons(board, move)
 end
 
 play_game(board)
