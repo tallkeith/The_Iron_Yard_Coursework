@@ -20,16 +20,16 @@ def show_board(board)
 	end
 end
 
-def win?(player_score, comp_score)
-
+def win?(player_score, comp_score, board)
+	turn_count = 0
 	if player_score.reduce(:+) == 15
 		puts "Congratulations, you win!"
 	elsif comp_score.reduce(:+) == 15
 		puts "Sorry, you lost"
-	elsif turn_count == MAX_TURNS
+	elsif !board.include?(1..9)
 		puts "You tied!"
 	else
-		score(player_score)
+		play_game(board)
 	end
 end
 
@@ -55,10 +55,6 @@ def current_player
 		else
 			current_player = player
 		end
-end
-
-def turn_count
-
 end
 
 def comp_move(board)	
@@ -90,7 +86,9 @@ def play_game(board)
 	show_board(board)
 	move = score(player_score)
 	icons(board, move)
-	win?(player_score, comp_score)
+	until win?(player_score, comp_score, board)
+		play_game(board)
+	end
 end
 
 play_game(board)
