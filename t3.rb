@@ -14,11 +14,12 @@ def win?(player_score, comp_score, board)
 		puts "Congratulations, you win!"
 	elsif comp_score.reduce(:+) == 15
 		puts "Sorry, you lost"
-	elsif !board.include?(1..9)
+	elsif turn_count == 9
 		puts "You tied!"
 	else
 		play_game(board)
 	end
+	turn_count += 1
 end
 
 def score(player_score)
@@ -49,22 +50,25 @@ def comp_move(board)
 	spot = board.sample
 	board[spot] = comp_piece
 	show_board(board)
-	if spot == (1..9)
+	if !board[spot].include?("X") && !board[spot].include?("O")
 		comp_piece
 	else
 		spot
 	end
+
 end
 
 def icons(board, input)
 	player_piece = "X"
-	comp_piece = "O"
 	spot = board.index(input)
 	board[spot] = player_piece
 	puts "Your move"
 	show_board(board)
 	puts "Computer's move"
 	comp_move(board)
+
+	puts
+	puts
 end
 
 def play_game(board)
